@@ -8,5 +8,5 @@ with open("sample.txt") as file:
         line = line.strip()
         print(line)
 
-with open("out.txt", "w") as out:
+with open("out01.txt", "w") as out:
     out.write("Hello\n")
