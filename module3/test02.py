@@ -40,3 +40,59 @@ Sample Output 2:
 badc
 dcba
 """
+
+inp1, inp2, inp3, inp4 = input(), input(), input(), input()
+
+# inp1 = 'abcd'
+# inp2 = '*d%#'
+# inp3 = 'abacabadaba'
+# inp4 = '#*%*d*%'
+
+d = dict(zip(inp1, inp2))
+
+
+def get_key(i):
+    for key, value in d.items():
+        if i == value:
+            return key
+
+
+def encode(inp):
+    out = ""
+    for i in inp:
+        if i in d.keys():
+            out += str(d[i])
+    return out
+
+
+def decode(inp):
+    out = ""
+    for i in inp:
+        if i in d.values():
+            out += str(get_key(i))
+    return out
+
+
+out1 = encode(inp3)
+out2 = decode(inp4)
+
+
+print(out1)
+print(out2)
+
+
+"""
+a,b,c,d=input(),input(),input(),input()
+print(''.join(b[a.index(i)] for i in c))
+print(''.join(a[b.index(i)] for i in d))
+"""
+
+
+"""
+source, dest = input(), input()
+decoded = input()
+encoded = input()
+
+print(decoded.translate(str.maketrans(source, dest)))
+print(encoded.translate(str.maketrans(dest, source)))
+"""
